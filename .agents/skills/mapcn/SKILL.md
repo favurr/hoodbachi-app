@@ -61,3 +61,6 @@ Install once with `npx shadcn@latest add @mapcn/map`, then import these APIs fro
 - [Logistics Network](llm/logistics-network.md) - install with `npx shadcn@latest add @mapcn/logistics-network`
 - [Store Locator](llm/store-locator.md) - install with `npx shadcn@latest add @mapcn/store-locator`
 
+## references
+
+- [API Cheatsheet](references/api-cheatsheet.md) - quick reference for mapcn components and props.
