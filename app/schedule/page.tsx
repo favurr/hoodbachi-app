@@ -15,7 +15,6 @@ const LOCATION = {
 export default function SchedulePage() {
   return (
     <section className="flex flex-1 flex-col bg-background">
-      <PublicNav />
       <div className="mx-auto max-w-6xl px-4 py-20 w-full">
         <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-5xl">Schedule</h1>
         <p className="mt-3 text-muted-foreground">Find us around Detroit this week.</p>
