@@ -7,6 +7,7 @@ Dates follow WAT (UTC+1).
 ## [Unreleased]
 
 ### Added
+
 - Initial project scaffold with Next.js 16, TypeScript, Tailwind
 - BetterAuth email/password authentication setup
 - Prisma schema with auth models and HoodBachi business models
@@ -18,7 +19,9 @@ Dates follow WAT (UTC+1).
 - AGENTS.md updated as source of truth for project docs
 
 ### Changed
+
 - None
 
 ### Fixed
+
 - None
