@@ -1,6 +1,3 @@
-"use client";
-
-import { PublicNav } from "@/components/public/nav";
 import { Map, MapMarker, MarkerContent, MarkerPopup, MapControls } from "@/components/ui/map";
 
 const LOCATION = {
@@ -15,41 +12,54 @@ const LOCATION = {
 export default function SchedulePage() {
   return (
     <section className="flex flex-1 flex-col bg-background">
-      <div className="mx-auto max-w-6xl px-4 py-20 w-full">
-        <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-5xl">Schedule</h1>
-        <p className="mt-3 text-muted-foreground">Find us around Detroit this week.</p>
-
-        <div className="mt-8 h-[420px] w-full overflow-hidden rounded-lg border border-border">
-          <Map center={[LOCATION.lng, LOCATION.lat]} zoom={13}>
-            <MapControls />
-            <MapMarker longitude={LOCATION.lng} latitude={LOCATION.lat}>
-              <MarkerContent>
-                <div className="bg-primary size-4 rounded-full border-2 border-white shadow-lg" />
-              </MarkerContent>
-              <MarkerPopup>
-                <div className="space-y-1">
-                  <p className="text-foreground font-medium">{LOCATION.name}</p>
-                  <p className="text-muted-foreground text-xs">{LOCATION.address}</p>
-                  <p className="text-muted-foreground text-xs">{LOCATION.hours}</p>
-                  <p className="text-muted-foreground text-xs">{LOCATION.phone}</p>
-                </div>
-              </MarkerPopup>
-            </MapMarker>
-          </Map>
+      <div className="mx-auto max-w-6xl px-4 py-24 w-full">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-widest text-red-600">
+            Find Us
+          </p>
+          <h1 className="mt-4 text-4xl font-bold tracking-tight text-foreground md:text-6xl">
+            Schedule
+          </h1>
+          <p className="mt-4 text-lg text-muted-foreground md:text-xl">
+            Catch the truck around Detroit this week, or plan your catering drop-off.
+          </p>
         </div>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          <div className="rounded-lg border border-border p-4">
-            <p className="font-semibold">Location</p>
-            <p className="text-sm text-muted-foreground">{LOCATION.address}</p>
+        <div className="mt-12 grid gap-8 md:grid-cols-3">
+          <div className="md:col-span-2 h-[420px] w-full overflow-hidden rounded-xl border border-border">
+            <Map center={[LOCATION.lng, LOCATION.lat]} zoom={13}>
+              <MapControls />
+              <MapMarker longitude={LOCATION.lng} latitude={LOCATION.lat}>
+                <MarkerContent>
+                  <div className="bg-primary size-5 rounded-full border-2 border-white shadow-lg" />
+                </MarkerContent>
+                <MarkerPopup>
+                  <div className="space-y-1">
+                    <p className="text-foreground font-medium">{LOCATION.name}</p>
+                    <p className="text-muted-foreground text-xs">{LOCATION.address}</p>
+                    <p className="text-muted-foreground text-xs">{LOCATION.hours}</p>
+                    <p className="text-muted-foreground text-xs">{LOCATION.phone}</p>
+                  </div>
+                </MarkerPopup>
+              </MapMarker>
+            </Map>
           </div>
-          <div className="rounded-lg border border-border p-4">
-            <p className="font-semibold">Hours</p>
-            <p className="text-sm text-muted-foreground">{LOCATION.hours}</p>
-          </div>
-          <div className="rounded-lg border border-border p-4">
-            <p className="font-semibold">Call</p>
-            <p className="text-sm text-muted-foreground">{LOCATION.phone}</p>
+
+          <div className="space-y-4">
+            <div className="rounded-xl border border-border p-5">
+              <p className="text-sm uppercase tracking-widest text-muted-foreground">Location</p>
+              <p className="mt-2 font-medium text-foreground">{LOCATION.address}</p>
+            </div>
+            <div className="rounded-xl border border-border p-5">
+              <p className="text-sm uppercase tracking-widest text-muted-foreground">Hours</p>
+              <p className="mt-2 font-medium text-foreground">{LOCATION.hours}</p>
+            </div>
+            <div className="rounded-xl border border-border p-5">
+              <p className="text-sm uppercase tracking-widest text-muted-foreground">Call</p>
+              <a href={`tel:${LOCATION.phone.replace(/[^0-9]/g, "")}`} className="mt-2 block font-medium text-foreground hover:text-primary">
+                {LOCATION.phone}
+              </a>
+            </div>
           </div>
         </div>
       </div>
