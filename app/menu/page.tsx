@@ -1,3 +1,23 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+const MENU_HIGHLIGHTS = [
+  {
+    title: "Chef's Hibachi Bowl",
+    description: "Premium cuts, seasonal vegetables, fried rice, house sauce.",
+    price: "$18.99",
+  },
+  {
+    title: "Chicken Hibachi Plate",
+    description: "Marinated chicken, grilled vegetables, noodles, soup.",
+    price: "$15.99",
+  },
+  {
+    title: "Shrimp & Steak Combo",
+    description: "Layered steak and shrimp, garlic butter, fried rice.",
+    price: "$22.99",
+  },
+];
+
 export default function MenuPage() {
   return (
     <section className="flex flex-1 flex-col bg-background">
@@ -14,8 +34,24 @@ export default function MenuPage() {
           </p>
         </div>
 
-        <div className="mt-12 rounded-xl border border-border p-10 text-center text-sm text-muted-foreground">
-          Full menu coming soon.
+        <div className="mt-16 grid gap-6 md:grid-cols-3">
+          {MENU_HIGHLIGHTS.map((item) => (
+            <Card key={item.title} className="border-border/70">
+              <CardHeader>
+                <CardTitle className="text-lg font-semibold text-foreground">{item.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                <p className="text-sm font-semibold text-foreground">{item.price}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <div className="mt-12">
+          <p className="text-xs uppercase tracking-wider text-muted-foreground">
+            Full menu available at the truck.
+          </p>
         </div>
       </div>
     </section>
