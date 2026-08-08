@@ -32,7 +32,7 @@ export default function HomePage() {
 
   return (
     <section ref={heroRef} className="relative flex min-h-[calc(100vh-4rem)] flex-col bg-background">
-      <div className="absolute inset-0 bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-950 dark:to-neutral-900" />
+      <div className="absolute inset-0 bg-linear-to-br from-neutral-50 to-neutral-100 dark:from-neutral-950 dark:to-neutral-900" />
       
       <div className="relative mx-auto max-w-6xl px-4 py-32 w-full flex-1 flex items-center">
         <div ref={contentRef} className="max-w-3xl space-y-8">
@@ -40,11 +40,11 @@ export default function HomePage() {
             <p className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-red-600 border border-red-600/20 rounded-full px-4 py-1.5">
               Detroit Halal Hibachi
             </p>
-            <h1 className="text-6xl font-bold tracking-tight text-foreground md:text-8xl leading-[0.95]">
+            <h1 className="text-6xl font-bold tracking-tight font-serif text-foreground md:text-8xl leading-[0.95]">
               HoodBachi
             </h1>
             <p className="text-xl text-muted-foreground md:text-2xl max-w-2xl leading-relaxed">
-              Premium hibachi grilled to order. Fresh ingredients, bold flavors, served around Detroit.
+              Premium <span>hibachi</span> grilled to order. Fresh ingredients, bold flavors, served around Detroit.
             </p>
           </div>
 

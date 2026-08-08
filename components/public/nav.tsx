@@ -12,7 +12,7 @@ export function PublicNav() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-        <Link href="/" className="text-lg font-bold tracking-tight text-primary">
+        <Link href="/" className="text-lg font-bold font-serif tracking-tight text-primary">
           HoodBachi
         </Link>
 

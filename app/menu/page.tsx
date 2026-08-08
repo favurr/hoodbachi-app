@@ -12,7 +12,7 @@ const MENU_HIGHLIGHTS = [
     price: "$15.99",
   },
   {
-    title: "Shrimp & Steak Combo",
+    title: "Shrimp and Steak Combo",
     description: "Layered steak and shrimp, garlic butter, fried rice.",
     price: "$22.99",
   },

@@ -1,3 +1,4 @@
+import { Card } from "@/components/ui/card";
 import { Map, MapMarker, MarkerContent, MarkerPopup, MapControls } from "@/components/ui/map";
 
 const LOCATION = {
@@ -5,8 +6,8 @@ const LOCATION = {
   address: "21509 Fenkell Ave, Detroit, MI",
   phone: "(313) 629-8567",
   hours: "Wed–Sat 12:00 PM – 7:30 PM",
-  lng: -83.1532,
-  lat: 42.4296,
+  lng: -83.253264,
+  lat: 42.400295,
 };
 
 export default function SchedulePage() {
@@ -26,8 +27,8 @@ export default function SchedulePage() {
         </div>
 
         <div className="mt-12 grid gap-8 md:grid-cols-3">
-          <div className="md:col-span-2 h-[420px] w-full overflow-hidden rounded-xl border border-border">
-            <Map center={[LOCATION.lng, LOCATION.lat]} zoom={13}>
+          <div className="md:col-span-2 h-105 w-full overflow-hidden rounded-xl border border-border">
+            <Map center={[LOCATION.lng, LOCATION.lat]} zoom={9}>
               <MapControls />
               <MapMarker longitude={LOCATION.lng} latitude={LOCATION.lat}>
                 <MarkerContent>
@@ -44,6 +45,13 @@ export default function SchedulePage() {
               </MapMarker>
             </Map>
           </div>
+
+          
+    <Card className="h-80 p-0 overflow-hidden">
+      <Map center={[-74.006, 40.7128]} zoom={11}>
+        <MapControls />
+      </Map>
+    </Card>
 
           <div className="space-y-4">
             <div className="rounded-xl border border-border p-5">
