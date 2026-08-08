@@ -5,23 +5,23 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+
 export function PublicNav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-neutral-950/80 backdrop-blur">
+    <header className="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-        <Link href="/" className="text-lg font-bold tracking-tight text-red-600">
+        <Link href="/" className="text-lg font-bold tracking-tight text-primary">
           HoodBachi
         </Link>
 
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-neutral-700 dark:text-neutral-200">
-          <Link href="/menu" className="hover:text-red-600">Menu</Link>
-          <Link href="/schedule" className="hover:text-red-600">Schedule</Link>
-          <Link href="/gallery" className="hover:text-red-600">Gallery</Link>
-          <Link href="/contact" className="hover:text-red-600">Contact</Link>
-          <a href="tel:+13136298567" className="hover:text-red-600">Call</a>
+        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-foreground">
+          <Link href="/menu" className="hover:text-primary">Menu</Link>
+          <Link href="/schedule" className="hover:text-primary">Schedule</Link>
+          <Link href="/gallery" className="hover:text-primary">Gallery</Link>
+          <Link href="/contact" className="hover:text-primary">Contact</Link>
+          <a href="tel:+13136298567" className="hover:text-primary">Call</a>
         </nav>
 
         <div className="flex items-center gap-2">
@@ -32,7 +32,7 @@ export function PublicNav() {
             </Button>
             {open && (
               <div className="fixed inset-0 z-50 bg-black/50" onClick={() => setOpen(false)}>
-                <div className="absolute right-0 top-0 h-full w-64 bg-white dark:bg-neutral-900 p-6 shadow-lg" onClick={(e) => e.stopPropagation()}>
+                <div className="absolute right-0 top-0 h-full w-64 bg-background p-6 shadow-lg" onClick={(e) => e.stopPropagation()}>
                   <Button variant="ghost" size="icon" className="mb-6" onClick={() => setOpen(false)}>
                     <X className="h-5 w-5" />
                   </Button>
