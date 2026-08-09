@@ -57,8 +57,8 @@ const theSeasons = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "HoodBachi Grill — Detroit Halal Hibachi Food Truck",
-  description: "Fresh halal hibachi grilled to order. Find us around Detroit.",
+  title: "Hibachi Lou — Pittsburgh Hibachi Food Truck",
+  description: "Fresh hibachi grilled to order around Pittsburgh. Book Lou for catering, weddings, and events.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
