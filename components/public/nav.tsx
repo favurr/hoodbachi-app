@@ -4,28 +4,29 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/shared/theme-toggle";
 
 export function PublicNav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur">
+    <header className="sticky top-0 z-40 w-full border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-        <Link href="/" className="text-lg font-bold font-serif tracking-tight text-primary">
-          HoodBachi
+        <Link href="/" className="text-base font-semibold tracking-wide text-foreground font-heading">
+          HIBACHI LOU
         </Link>
 
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-foreground">
-          <Link href="/menu" className="hover:text-primary">Menu</Link>
-          <Link href="/schedule" className="hover:text-primary">Schedule</Link>
-          <Link href="/gallery" className="hover:text-primary">Gallery</Link>
-          <Link href="/contact" className="hover:text-primary">Contact</Link>
-          <a href="tel:+13136298567" className="hover:text-primary">Call</a>
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-foreground">
+          <Link href="/menu" className="hover:text-primary">MENU</Link>
+          <Link href="/schedule" className="hover:text-primary">LOCATIONS</Link>
+          <Link href="/gallery" className="hover:text-primary">GALLERY</Link>
+          <Link href="/contact" className="hover:text-primary">CATERING</Link>
+          <Link href="/contact" className="hover:text-primary">ABOUT</Link>
         </nav>
 
         <div className="flex items-center gap-2">
-          <ThemeToggle />
+          <Link href="/contact" className="hidden md:inline-flex text-sm font-medium hover:text-primary">
+            BOOK LOU →
+          </Link>
           <div className="md:hidden">
             <Button variant="ghost" size="icon" onClick={() => setOpen(true)}>
               <Menu className="h-5 w-5" />
@@ -36,12 +37,13 @@ export function PublicNav() {
                   <Button variant="ghost" size="icon" className="mb-6" onClick={() => setOpen(false)}>
                     <X className="h-5 w-5" />
                   </Button>
-                  <div className="flex flex-col gap-4 text-base font-medium">
+                  <div className="flex flex-col gap-5 text-base font-medium">
                     <Link href="/menu" onClick={() => setOpen(false)}>Menu</Link>
-                    <Link href="/schedule" onClick={() => setOpen(false)}>Schedule</Link>
+                    <Link href="/schedule" onClick={() => setOpen(false)}>Locations</Link>
                     <Link href="/gallery" onClick={() => setOpen(false)}>Gallery</Link>
-                    <Link href="/contact" onClick={() => setOpen(false)}>Contact</Link>
-                    <a href="tel:+13136298567" onClick={() => setOpen(false)}>Call</a>
+                    <Link href="/contact" onClick={() => setOpen(false)}>Catering</Link>
+                    <Link href="/contact" onClick={() => setOpen(false)}>About</Link>
+                    <Link href="/contact" onClick={() => setOpen(false)}>Book Lou →</Link>
                   </div>
                 </div>
               </div>
