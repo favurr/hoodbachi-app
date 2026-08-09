@@ -1,10 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/shared/theme-toggle";
+import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
 
 export function PublicNav() {
   const [open, setOpen] = useState(false);
@@ -25,7 +24,6 @@ export function PublicNav() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <ThemeToggle />
           <div className="md:hidden">
             <Button variant="ghost" size="icon" onClick={() => setOpen(true)}>
               <Menu className="h-5 w-5" />

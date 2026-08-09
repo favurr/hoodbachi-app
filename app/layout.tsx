@@ -1,5 +1,4 @@
 import { PublicNav } from "@/components/public/nav";
-import { ThemeProvider } from "@/components/shared/theme-provider";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -70,15 +69,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} ${theSeasons.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <PublicNav />
-          <main className="flex-1">{children}</main>
-        </ThemeProvider>
+        <PublicNav />
+        <main className="flex-1">{children}</main>
       </body>
     </html>
   );
