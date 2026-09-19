@@ -1,7 +1,7 @@
 import { PublicNav } from "@/components/public/nav";
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
+import localFont from "next/font/local";
 
 const geistSans = localFont({
   variable: "--font-geist-sans",
