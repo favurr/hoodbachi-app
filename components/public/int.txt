@@ -1,0 +1,534 @@
+Hibachi Lou — Visual Direction
+
+Overall feel
+Modern food brand × editorial magazine × Pittsburgh street culture.
+Not:
+dark luxury restaurant
+generic food-truck template
+overly polished SaaS design
+excessive glassmorphism
+Instead:
+Cream backgrounds. Loud red. Warm yellow. Huge typography. Beautiful food photography. Lots of whitespace. Strong editorial layouts.
+
+The reference's use of a dominant red/yellow/cream palette is exactly the kind of energy I'd carry over, but make it more sophisticated for Hibachi Lou.
+
+---
+
+Fonts
+Geist
+Geist Mono
+The Seasons all self-hosted
+
+import localFont from "next/font/local";
+
+const geistSans = localFont({
+  variable: "--font-geist-sans",
+  display: "swap",
+  src: [
+    {
+      path: "../public/fonts/Geist.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Geist-Italic.ttf",
+      weight: "300",
+      style: "italic",
+    },
+  ],
+});
+
+const geistMono = localFont({
+  variable: "--font-geist-mono",
+  display: "swap",
+  src: [
+    {
+      path: "../public/fonts/GeistMono.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/GeistMono-Italic.ttf",
+      weight: "300",
+      style: "italic",
+    },
+  ],
+});
+
+const theSeasons = localFont({
+  variable: "--font-the-seasons",
+  display: "swap",
+  src: [
+    {
+      path: "../public/fonts/theseasons-lt.otf",
+      weight: "200",
+    },
+    {
+      path: "../public/fonts/theseasons-reg.otf",
+      weight: "400",
+    },
+    {
+      path: "../public/fonts/theseasons-bd.otf",
+      weight: "700",
+    },
+  ],
+});
+
+---
+
+Typography
+Geist
+Use Geist for essentially all UI and body content.
+Navigation
+Body
+Buttons
+Labels
+Descriptions
+Forms
+Metadata
+Cards
+
+Geist Mono
+Only for things that benefit from a technical/numeric treatment:
+412
+2026
+05:30 PM
+$18
+01
+02
+03
+PITTSBURGH, PA
+This gives the site that subtle modern/design-engineering feel without making everything look like a developer website.
+
+The Seasons
+Use The Seasons exclusively for major editorial headings.
+For example:
+HIBACHI
+ON WHEELS
+
+COME
+HUNGRY.
+
+THE GRILL
+IS HOT.
+And tighten the headings.
+
+Use:
+font-family: "The Seasons";
+letter-spacing: -0.04em;
+line-height: 0.88;
+The Seasons should feel large, compressed, and intentional, rather than airy luxury-serif typography.
+
+Color System
+I'd start with:
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(96.478% 0.01257 86.799);
+  --foreground: oklch(19.404% 0.00628 55.877);
+  --card: oklch(99.42% 0.00681 88.607);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(0.98 0.005 95);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(58.405% 0.22683 26.856);
+  --primary-foreground: oklch(100% 0.00011 271.152);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(91.476% 0.01891 83.026);
+  --muted-foreground: oklch(52.098% 0.01636 74.235);
+  --accent: oklch(84.391% 0.15125 87.869);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(86.998% 0.02252 80.64);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.93 0.06 90);
+  --chart-3: oklch(0.6 0.118 184.704);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.98 0.005 95);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.55 0.22 27);
+  --sidebar-primary-foreground: oklch(0.98 0.005 95);
+  --sidebar-accent: oklch(0.95 0.01 90);
+  --sidebar-accent-foreground: oklch(0.145 0 0);
+  --sidebar-border: oklch(0.92 0.01 95);
+  --sidebar-ring: oklch(0.55 0.22 27);
+}
+
+But don't make the entire website red.
+The cream should dominate.
+Think:
+70% cream / white
+20% red
+10% yellow
+with photography providing the remaining visual energy.
+
+Homepage Structure
+structure the homepage like this:
+
+PAGE LOADER
+      ↓
+NAV
+      ↓
+HERO
+      ↓
+MARQUEE
+      ↓
+ABOUT / BRAND STATEMENT
+      ↓
+MENU SHOWCASE
+      ↓
+FOOD EXPERIENCE
+      ↓
+FIND THE TRUCK
+      ↓
+CATERING
+      ↓
+SOCIAL PROOF
+      ↓
+INSTAGRAM
+      ↓
+FINAL CTA
+      ↓
+FOOTER
+
+01 — Page Loader
+Don't make it a generic spinner.
+The loader should feel like part of the brand.
+Concept
+Full-screen cream background.
+Centered:
+HIBACHI LOU
+in The Seasons.
+Underneath:
+PITTSBURGH / 412
+in Geist Mono.
+Then a loading indicator.
+Something like:
+HIBACHI LOU
+[████████████████░░░░]
+412 / PITTSBURGH
+The progress number uses Geist Mono and should be positioned at the bottom right corner of the loader and BIG.
+
+Animation
+The page starts with:
+0%
+and progresses to:
+100%
+Meanwhile the logo subtly scales from:
+0.96 → 1
+Then:
+loader background slides upward
+
+hero content is revealed underneath
+navigation fades in
+hero image finishes its entrance
+No 3-second artificial loading screen.
+If the page is already ready at 400ms, get out of the way.
+The loader should communicate brand, not waste someone's time.
+
+02 — Navbar
+Cream background.
+Logo on left:
+HIBACHI LOU
+Center/right:
+MENU
+LOCATIONS
+CATERING
+ABOUT
+Right:
+BOOK LOU →
+The nav should be relatively minimal.
+On scroll:
+At top
+Transparent/cream.
+After scrolling
+A small floating/pill-like navigation can appear with a subtle border.
+Not glassmorphism.
+Just:
+┌──────────────────────────────────────┐
+│ HIBACHI LOU   MENU  LOCATIONS  BOOK  │
+└──────────────────────────────────────┘
+
+03 — Hero
+Image background from unsplash.
+Huge headline:
+PITTSBURGH'S
+HIBACHI
+ON WHEELS.
+The Seasons.
+Tight line-height.
+Then a small description in Geist:
+Big flavor, hot grills, and hibachi cooked right in front of you. Catch us around Pittsburgh or bring Hibachi Lou to your next event.
+Buttons:
+FIND THE TRUCK →        BOOK LOU →
+
+04 — Marquee
+This is important.
+A thin red horizontal strip.
+Moving text:
+HIBACHI LOU  •  PITTSBURGH  •  412  •  HIBACHI LOU  •
+PITTSBURGH  •  412  •
+Geist Mono.
+This creates that food-brand/editorial feeling from your reference.
+It can move continuously with GSAP.
+
+05 — Brand Statement
+Cream background.
+Huge heading:
+WE BRING
+THE GRILL
+TO YOU.
+Then a large food image occupying roughly half the viewport.
+Copy beside it:
+Hibachi Lou isn't just another food truck. We bring the grill, the heat, and the experience straight to the streets of Pittsburgh.
+Then a small mono label:
+
+01 / THE LOU EXPERIENCE
+This is where the site starts feeling like a brand, not a restaurant directory.
+
+06 — Menu
+This becomes one of the visual centerpieces.
+Heading:
+WHAT'S
+COOKIN'?
+Then cards on cream.
+Instead of boring restaurant menu rows:
+STEAK HIBACHI
+$18
+
+CHICKEN HIBACHI
+$16
+
+SHRIMP HIBACHI
+$18
+
+Use large food photography + editorial cards.
+Each card can have:
+
+01
+STEAK
+HIBACHI
+
+$18
+
+with Geist Mono for the number/price.
+Hover:
+image zooms slightly
+card shifts 4–8px
+arrow appears
+title subtly moves
+
+Nothing ridiculous.
+
+07 — Grill Experience
+This should be the biggest visual section.
+Full-width photography/video.
+Overlaid:
+
+IT'S NOT
+JUST FOOD.
+
+Then:
+
+IT'S THE SHOW.
+
+The Seasons.
+
+Underneath:
+
+FIRE
+FLAVOR
+FRESH
+412
+
+Geist Mono.
+As the section enters the viewport, the image expands from a constrained container into full viewport width.
+That's a very good GSAP moment.
+
+08 — Find The Truck
+Now use the red.
+Full red section.
+Heading:
+WHERE'S
+LOU?
+The Seasons in cream.
+Then event cards:
+08.16.26
+
+SATURDAY
+12:00 PM — 7:00 PM
+
+PITTSBURGH, PA
+
+[ GET DIRECTIONS → ]
+
+Geist Mono for the dates/times.
+
+This section should be highly functional.
+
+Filter:
+
+ALL
+THIS WEEK
+THIS MONTH
+09 — Catering
+
+Cream again.
+
+Huge heading:
+
+BRING
+LOU
+TO YOU.
+
+Then a massive catering image.
+
+Below:
+
+WEDDINGS
+PRIVATE PARTIES
+CORPORATE
+COMMUNITY EVENTS
+
+Each item can reveal an image on hover.
+
+CTA:
+
+BOOK HIBACHI LOU →
+
+This becomes the primary money-making CTA.
+
+10 — Social Proof
+
+Rather than making it look like Yelp:
+
+Huge statement:
+
+PITTSBURGH
+KNOWS WHAT'S UP.
+
+Then:
+
+BEST OF PGH
+2025
+
+# 1
+FOOD TRUCK
+
+The 2025 and #1 use Geist Mono.
+
+FOOD TRUCK uses The Seasons.
+
+Then testimonials beneath.
+
+11 — Instagram
+
+Heading:
+
+FOLLOW
+THE FLAVOR.
+
+Then an asymmetrical editorial grid.
+
+Not a perfect 3×3 Instagram clone.
+
+Something more like:
+
+┌──────────┬───────┬──────────┐
+│          │       │          │
+│   BIG    │       │          │
+│  IMAGE   │ IMAGE │   IMAGE  │
+│          │       │          │
+├──────────┴───────┤          │
+│                  │          │
+│      IMAGE       │   IMAGE  │
+│                  │          │
+└──────────────────┴──────────┘
+
+This is where the Instagram account actually influences the website.
+
+12 — Final CTA
+
+Red background.
+
+Huge cream text:
+
+HUNGRY?
+
+Then:
+
+LET'S COOK.
+
+Buttons:
+
+FIND THE TRUCK →
+BOOK LOU →
+
+And a tiny:
+
+@HIBACHILOU412
+PITTSBURGH, PA
+Animation Language
+
+The animations should be editorial, not "look what GSAP can do."
+
+Typography
+
+Headings reveal upward:
+
+translateY(100%)
+→
+translateY(0)
+
+with a clipped container.
+
+Images
+scale(1.08)
+→
+scale(1)
+Cards
+
+Small movement:
+
+y: 20px → 0
+opacity: 0 → 1
+Marquee
+
+Continuous horizontal movement.
+
+Menu
+
+Horizontal scrolling gallery on desktop.
+
+Truck
+
+Hero truck can have a tiny entrance movement:
+
+x: 80px → 0
+opacity: 0 → 1
+Page transitions
+
+Cream → cream.
+
+No dramatic black transition.
+
+The Design Principle
+
+The reference you gave me has something I like a lot:
+
+It isn't afraid of color.
+
+That's what I want to preserve.
+
+But I'd make Hibachi Lou considerably more contemporary.
+
+Think:
+
+The Seasons + Geist + cream paper + aggressive red + yellow accents + huge food photography + mono metadata + editorial grid.
+
+That combination could look very, very good.
+
+And the page loader becomes the first piece of that experience rather than an afterthought.
